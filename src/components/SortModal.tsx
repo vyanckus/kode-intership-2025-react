@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as CloseIcon } from "../assets/icons/close.svg";
+import CloseIcon from "../assets/icons/close.svg";
 
 interface SortModalProps {
   isOpen: boolean;
@@ -36,7 +36,7 @@ const ModalWrap = styled.div`
   background-color: #fff;
 `;
 
-const ModalCloseButton = styled(CloseIcon)`
+const ModalCloseButton = styled.img`
   position: absolute;
   top: 24px;
   right: 23px;
@@ -147,7 +147,11 @@ function SortModal({
     <ModalOverlay onClick={onClose}>
       <ModalWrap onClick={(e) => e.stopPropagation()}>
         <ModalTitle>Сортировка</ModalTitle>
-        <ModalCloseButton onClick={onClose} />
+        <ModalCloseButton 
+          src={CloseIcon} 
+          alt="Close" 
+          onClick={onClose} 
+        />
         <ModalRadioWrap>
           <CustomRadio
             label="По алфавиту"

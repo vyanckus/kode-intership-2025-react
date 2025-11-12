@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { ReactComponent as SearchIconGray } from "../assets/icons/search-gray.svg";
-import { ReactComponent as SearchIconBlack } from "../assets/icons/search-black.svg";
-import { ReactComponent as SortIconGray } from "../assets/icons/sort-gray.svg";
-import { ReactComponent as SortIconPurple } from "../assets/icons/sort-purple.svg";
+import SearchIconGray from "../assets/icons/search-gray.svg";
+import SearchIconBlack from "../assets/icons/search-black.svg";
+import SortIconGray from "../assets/icons/sort-gray.svg";
+import SortIconPurple from "../assets/icons/sort-purple.svg";
 import SortModal from "./SortModal";
 
 const TopAppBarContainer = styled.header`
@@ -49,13 +49,13 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchIconGrayStyled = styled(SearchIconGray)`
+const SearchIconGrayStyled = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 8px;
 `;
 
-const SearchIconBlackStyled = styled(SearchIconBlack)`
+const SearchIconBlackStyled = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 8px;
@@ -73,12 +73,12 @@ const SortButton = styled.button`
   }
 `;
 
-const SortIconGrayStyled = styled(SortIconGray)`
+const SortIconGrayStyled = styled.img`
   width: 21px;
   height: 12px;
 `;
 
-const SortIconPurpleStyled = styled(SortIconPurple)`
+const SortIconPurpleStyled = styled.img`
   width: 21px;
   height: 12px;
 `;
@@ -165,7 +165,11 @@ const TopAppBar: React.FC<TopAppBarProps> = ({
     <TopAppBarContainer>
       <SearchTitle>Поиск</SearchTitle>
       <SearchInputContainer $isFocused={isFocused}>
-        {isFocused ? <SearchIconBlackStyled /> : <SearchIconGrayStyled />}
+        {isFocused ? (
+          <SearchIconBlackStyled src={SearchIconBlack} alt="Search" />
+        ) : (
+          <SearchIconGrayStyled src={SearchIconGray} alt="Search" />
+        )}
         <SearchInput
           type="text"
           placeholder="Введите имя, тег, почту..."
@@ -180,9 +184,9 @@ const TopAppBar: React.FC<TopAppBarProps> = ({
           onMouseLeave={() => setIsSortButtonHovered(false)}
         >
           {isSortButtonHovered ? (
-            <SortIconPurpleStyled />
+            <SortIconPurpleStyled src={SortIconPurple} alt="Sort" />
           ) : (
-            <SortIconGrayStyled />
+            <SortIconGrayStyled src={SortIconGray} alt="Sort" />
           )}
         </SortButton>
       </SearchInputContainer>

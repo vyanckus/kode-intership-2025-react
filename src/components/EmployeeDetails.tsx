@@ -3,9 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { getUsers } from "../api/getUsers";
 import { EmployeeType } from "../types/employeeType";
 import styled from "styled-components";
-import { ReactComponent as BackIcon } from "../assets/icons/back.svg";
-import { ReactComponent as StarIcon } from "../assets/icons/star.svg";
-import { ReactComponent as PhoneIcon } from "../assets/icons/phone.svg";
+import BackIcon from "../assets/icons/back.svg";
+import StarIcon from "../assets/icons/star.svg";
+import PhoneIcon from "../assets/icons/phone.svg";
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const BackLink = styled(Link)`
   text-decoration: none;
 `;
 
-const BackIconStyled = styled(BackIcon)`
+const BackIconStyled = styled.img`
   width: 8px;
   height: 12px;
 `;
@@ -103,13 +103,13 @@ const InfoItemLeft = styled.div`
   align-items: center;
 `;
 
-const StarIconStyled = styled(StarIcon)`
+const StarIconStyled = styled.img`
   margin-right: 14px;
   width: 21px;
   height: 20px;
 `;
 
-const PhoneIconStyled = styled(PhoneIcon)`
+const PhoneIconStyled = styled.img`
   margin-right: 14px;
   width: 21px;
   height: 20px;
@@ -189,7 +189,7 @@ function EmployeeDetails() {
     <DetailsContainer>
       <DetailsContainerTop>
         <BackLink to="/">
-          <BackIconStyled />
+          <BackIconStyled src={BackIcon} alt="Back" />
         </BackLink>
         <Avatar src={employee.avatarUrl} alt="Аватар" />
         <NamePositionContainer>
@@ -203,14 +203,14 @@ function EmployeeDetails() {
       <DetailsContainerBottom>
         <InfoItem>
           <InfoItemLeft>
-            <StarIconStyled />
+            <StarIconStyled src={StarIcon} alt="Birthday" />
             {day} {month} {year}
           </InfoItemLeft>
           <Age>{age} лет</Age>
         </InfoItem>
         <InfoItem>
           <InfoItemLeft>
-            <PhoneIconStyled />
+            <PhoneIconStyled src={PhoneIcon} alt="Phone" />
             <a href={`tel:${employee.phone}`}>{employee.phone}</a>
           </InfoItemLeft>
           <Age></Age>

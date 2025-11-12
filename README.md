@@ -4,7 +4,7 @@ React + TypeScript приложение для отображения сотру
 
 ## 🚀 Демо
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://yourusername.github.io/kode-intership-2025-react)
+[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://vyanckus.github.io/kode-intership-2025-react/)
 
 *Приложение размещено на GitHub Pages*
 

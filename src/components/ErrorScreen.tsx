@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as UfoIcon } from "../assets/icons/flying-saucer.svg";
+import UfoIcon from "../assets/icons/flying-saucer.svg";
 
 const ErrorContainer = styled.div`
   position: absolute;
@@ -43,7 +43,7 @@ const RetryButton = styled.button`
   cursor: pointer;
 `;
 
-const UfoIconStyled = styled(UfoIcon)`
+const UfoIconStyled = styled.img`
   width: 56px;
   height: 56px;
   margin-bottom: 8px;
@@ -56,7 +56,7 @@ interface ErrorScreenProps {
 const ErrorScreen: React.FC<ErrorScreenProps> = ({ onRetry }) => {
   return (
     <ErrorContainer>
-      <UfoIconStyled />
+      <UfoIconStyled src={UfoIcon} alt="Error" />
       <ErrorMessage>Какой-то сверхразум все сломал</ErrorMessage>
       <ErrorSubMessage>Постараемся быстро починить</ErrorSubMessage>
       <RetryButton onClick={onRetry}>Попробовать снова</RetryButton>

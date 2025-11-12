@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as MagnifierIcon } from "../assets/icons/magnifying-glass.svg";
+import MagnifierIcon from "../assets/icons/magnifying-glass.svg";
 
 const NoResultsContainer = styled.div`
   position: absolute;
@@ -30,16 +30,17 @@ const SubMessage = styled.p`
   color: #97979b;
 `;
 
-const MagnifierIconStyled = styled(MagnifierIcon)`
+const MagnifierIconStyled = styled.img`
   width: 56px;
   height: 56px;
   margin-bottom: 8px;
+  opacity: 0.5;
 `;
 
 const NoResults: React.FC = () => {
   return (
     <NoResultsContainer>
-      <MagnifierIconStyled />
+      <MagnifierIconStyled src={MagnifierIcon} alt="No results" />
       <Message>Мы никого не нашли</Message>
       <SubMessage>Попробуйте скорректировать запрос</SubMessage>
     </NoResultsContainer>
