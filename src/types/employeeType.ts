@@ -4,7 +4,7 @@ export interface EmployeeType {
   firstName: string;
   lastName: string;
   userTag: string;
-  department: string;
+  department: Department;
   position: string;
   birthday: string;
   phone: string;
